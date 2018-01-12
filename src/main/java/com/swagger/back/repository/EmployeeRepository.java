@@ -1,6 +1,6 @@
-package com.swagger.repository;
+package com.swagger.back.repository;
 
-import com.swagger.domain.Employee;
+import com.swagger.back.domain.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;

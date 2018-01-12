@@ -1,6 +1,6 @@
-package com.swagger.controller;
+package com.swagger.back.controller;
 
-import com.swagger.service.EmployeeService;
+import com.swagger.back.service.EmployeeService;
 import flexjson.JSONSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -12,17 +12,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.annotation.Resources;
-
 @Controller
 @RequestMapping("/employees")
 public class EmployeeController {
 
-//    @Resources("EmployeeService")
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/findAllEmployee")
+    @GetMapping(value = "/findAllEmployee",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
     public ResponseEntity<String> findAllEmployee(){
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type","application/json");
@@ -32,7 +29,7 @@ public class EmployeeController {
                 ,headers,HttpStatus.OK);
     }
 
-    @GetMapping("/findOne/{id}")
+    @GetMapping(value = "/findOne/{id}",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
     public ResponseEntity<String> findOne(@PathVariable("id") Long id){
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type","application/json");
@@ -41,7 +38,7 @@ public class EmployeeController {
                 .prettyPrint(true).exclude("*.class").deepSerialize(employeeService.findOne(id)),headers, HttpStatus.OK);
     }
 
-    @GetMapping("/findByFirstName")
+    @GetMapping(value = "/findByFirstName",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
     public ResponseEntity<String> findByFirstName(@RequestParam("firstName") String firstName){
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type","application/json");
@@ -50,7 +47,7 @@ public class EmployeeController {
                 .prettyPrint(true).exclude("*.class").deepSerialize(employeeService.findByFisrtName(firstName)),headers, HttpStatus.OK);
     }
 
-    @GetMapping("/findByLastName")
+    @GetMapping(value = "/findByLastName",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
     public ResponseEntity<String> findBylastName(@RequestParam("firstName") String lastName){
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type","application/json");

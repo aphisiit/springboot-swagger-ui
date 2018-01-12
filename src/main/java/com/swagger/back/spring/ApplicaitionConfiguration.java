@@ -1,23 +1,18 @@
-package com.swagger.spring;
+package com.swagger.back.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.*;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.paths.RelativePathProvider;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
-import javax.servlet.ServletContext;
-import java.util.Locale;
 
 @EnableAutoConfiguration
 @Configuration
 @EnableSwagger2
-@ComponentScan(basePackages = "com.swagger")
+@ComponentScan(basePackages = "com.swagger.back")
 public class ApplicaitionConfiguration extends WebMvcConfigurerAdapter{
 
 
