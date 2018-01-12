@@ -1,4 +1,4 @@
-package com.swagger.domain;
+package com.swagger.back.domain;
 
 import lombok.Data;
 import javax.persistence.Entity;

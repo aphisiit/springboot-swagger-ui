@@ -1,7 +1,7 @@
-package com.swagger.service;
+package com.swagger.back.service;
 
-import com.swagger.domain.Employee;
-import com.swagger.repository.EmployeeRepository;
+import com.swagger.back.domain.Employee;
+import com.swagger.back.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

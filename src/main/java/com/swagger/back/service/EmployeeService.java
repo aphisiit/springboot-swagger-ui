@@ -1,6 +1,6 @@
-package com.swagger.service;
+package com.swagger.back.service;
 
-import com.swagger.domain.Employee;
+import com.swagger.back.domain.Employee;
 
 import java.util.List;
 
