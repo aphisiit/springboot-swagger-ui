@@ -48,7 +48,7 @@ public class EmployeeController {
     }
 
     @GetMapping(value = "/findByLastName",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
-    public ResponseEntity<String> findBylastName(@RequestParam("firstName") String lastName){
+    public ResponseEntity<String> findBylastName(@RequestParam("lastName") String lastName){
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type","application/json");
 
