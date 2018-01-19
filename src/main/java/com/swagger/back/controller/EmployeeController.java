@@ -22,7 +22,7 @@ public class EmployeeController {
     @GetMapping(value = "/findAllEmployee",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
     public ResponseEntity<String> findAllEmployee(){
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type","application/json");
+        headers.add("Content-Type","application/json; charset=utf-8;");
 
         return new ResponseEntity<>(new JSONSerializer()
                 .prettyPrint(true).exclude("*.class").deepSerialize(employeeService.findAll())
@@ -32,7 +32,7 @@ public class EmployeeController {
     @GetMapping(value = "/findOne/{id}",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
     public ResponseEntity<String> findOne(@PathVariable("id") Long id){
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type","application/json");
+        headers.add("Content-Type","application/json; charset=utf-8;");
 
         return new ResponseEntity<>(new JSONSerializer()
                 .prettyPrint(true).exclude("*.class").deepSerialize(employeeService.findOne(id)),headers, HttpStatus.OK);
@@ -41,7 +41,7 @@ public class EmployeeController {
     @GetMapping(value = "/findByFirstName",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
     public ResponseEntity<String> findByFirstName(@RequestParam("firstName") String firstName){
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type","application/json");
+        headers.add("Content-Type","application/json; charset=utf-8;");
 
         return new ResponseEntity<>(new JSONSerializer()
                 .prettyPrint(true).exclude("*.class").deepSerialize(employeeService.findByFisrtName(firstName)),headers, HttpStatus.OK);
@@ -50,7 +50,7 @@ public class EmployeeController {
     @GetMapping(value = "/findByLastName",produces = "text/html; charset=utf-8",headers = "Accept=application/json; charset=utf-8")
     public ResponseEntity<String> findBylastName(@RequestParam("lastName") String lastName){
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type","application/json");
+        headers.add("Content-Type","application/json; charset=utf-8;");
 
         return new ResponseEntity<>(new JSONSerializer()
                 .prettyPrint(true).exclude("*.class").deepSerialize(employeeService.findByLastName(lastName)),headers, HttpStatus.OK);
