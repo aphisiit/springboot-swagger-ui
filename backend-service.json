@@ -1,0 +1,25 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "backend",
+    "namespace": "default",
+    "labels": {
+      "run": "backend"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 8090,
+        "targetPort": 8090,
+        "nodePort": 30001
+      }
+    ],
+    "selector": {
+      "run": "backend"
+    },
+    "type": "LoadBalancer"
+  }
+}
