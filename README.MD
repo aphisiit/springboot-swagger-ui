@@ -11,3 +11,6 @@ You can build a tagged docker image using the Maven command line like this
     
     mvn install dockerfile:build -Dmaven.test.skip=true
 
+Run docker images
+
+    docker run -p 8090:8090 --name SpringBootSwagger -d spt/swagger-back
